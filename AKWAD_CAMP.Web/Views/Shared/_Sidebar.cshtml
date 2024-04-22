@@ -1,0 +1,141 @@
+﻿
+
+
+
+<aside class="main-sidebar" id="menu" @*style="background: linear-gradient(#515b69,#013459),#000000; box-shadow:5px 5px 5px #013459;transition:all 0.3s ease;"*@>
+    <section class="sidebar">
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">Menu</li>
+            <li>
+                <a href="#"><i class="glyphicon glyphicon-dashboard"></i> <span>Home </span></a>
+
+            </li>
+            <li class="treeview link-pointer" routerLinkActive="active menu-open">
+                <a>
+                    <i class="fa fa-linux"></i> <span>Status</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="" routerLinkActive="active">
+                        <a asp-action="Create" asp-controller="Status"><i class="glyphicon glyphicon-tasks"></i> <span>Add New Status</span></a>
+                    </li>
+                    <li class="" routerLinkActive="active">
+                        <a asp-action="Index" asp-controller="Status"><i class="glyphicon glyphicon-tasks"></i> <span>List of Statuses</span></a>
+                    </li>
+                </ul>
+            </li>
+             <li class="treeview link-pointer" routerLinkActive="active menu-open">
+                <a>
+                    <i class="fa fa-linux"></i> <span>Units</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="" routerLinkActive="active">
+                        <a asp-action="Create" asp-controller="Units"><i class="glyphicon glyphicon-tasks"></i> <span>Add New Unit</span></a>
+                    </li>
+                    <li class="" routerLinkActive="active">
+                        <a asp-action="Index" asp-controller="Units"><i class="glyphicon glyphicon-tasks"></i> <span>List of Units</span></a>
+                    </li>
+                </ul>
+            </li>
+             <li class="treeview link-pointer" routerLinkActive="active menu-open">
+                <a>
+                    <i class="fa fa-linux"></i> <span>Item Categories</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="" routerLinkActive="active">
+                        <a asp-action="Create" asp-controller="ItemsCategories"><i class="glyphicon glyphicon-tasks"></i> <span>Add New Item Category</span></a>
+                    </li>
+                    <li class="" routerLinkActive="active">
+                        <a asp-action="Index" asp-controller="ItemsCategories"><i class="glyphicon glyphicon-tasks"></i> <span>List of Item Categories</span></a>
+                    </li>
+                </ul>
+            </li>
+
+             <li class="treeview link-pointer" routerLinkActive="active menu-open">
+                <a>
+                    <i class="fa fa-linux"></i> <span>Items</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="" routerLinkActive="active">
+                        <a asp-action="Create" asp-controller="ItemsDetails"><i class="glyphicon glyphicon-tasks"></i> <span>Add New Item</span></a>
+                    </li>
+                    <li class="" routerLinkActive="active">
+                        <a asp-action="Index" asp-controller="ItemsDetails"><i class="glyphicon glyphicon-tasks"></i> <span>List of Items</span></a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="treeview link-pointer" routerLinkActive="active menu-open">
+                <a>
+                    <i class="fa fa-linux"></i> <span>Product Details</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="" routerLinkActive="active">
+                        <a asp-action="Create" asp-controller="ProductDetail"><i class="glyphicon glyphicon-tasks"></i> <span>Add New Product Details </span></a>
+                    </li>
+                    <li class="" routerLinkActive="active">
+                        <a asp-action="Index" asp-controller="ProductDetail"><i class="glyphicon glyphicon-tasks"></i> <span>List of Product Details </span></a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="treeview link-pointer" routerLinkActive="active menu-open">
+                <a>
+                    <i class="fa fa-linux"></i> <span>Employees Manager</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="" routerLinkActive="active">
+                        <a href="#"><i class="glyphicon glyphicon-tasks"></i> <span>Add Employee</span></a>
+                    </li>
+                    <li class="" routerLinkActive="active">
+                        <a href="#"><i class="glyphicon glyphicon-tasks"></i> <span>List of Employees</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview link-pointer" routerLinkActive="active menu-open">
+                <a>
+                    <i class="fa fa-linux"></i> <span>Employees Manager</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="" routerLinkActive="active">
+                        <a asp-action="CreateEmployee" asp-controller="Administration"><i class="glyphicon glyphicon-tasks" ></i> <span>Add Employee</span></a>
+                    </li>
+                    <li class="" routerLinkActive="active">
+                        <a href="#"><i class="glyphicon glyphicon-tasks"></i> <span>List of Employees</span></a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+
+        
+    </section>
+</aside>
+
+
+<style>
+    #menu {
+        position: fixed;
+    }
+</style>

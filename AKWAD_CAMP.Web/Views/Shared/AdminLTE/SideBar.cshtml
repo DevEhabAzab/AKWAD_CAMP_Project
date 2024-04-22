@@ -1,0 +1,251 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+@using System.Globalization;
+@inject IViewLocalizer _loclizer;
+
+<aside  class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a asp-action="Create" asp-controller="Status" class="brand-link elevation-4 text-center">
+       
+        <span class="brand-text font-weight-light text-bold">AKWAD.CAMP</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image" >
+                <img src="~/AdminLTE-3.1.0//dist/img/customusericon.jpg" class="img-circle elevation-2" alt="User Image" asp-append-version="true">
+            </div>
+            <div class="info">
+                <a  v @*asp-area="Identity" asp-page="/Account/Manage/Index" *@class="d-block">@User.Identity.Name</a>
+            </div>
+        </div>
+
+        @*<!-- SidebarSearch Form -->
+        <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-sidebar">
+                        <i class="fas fa-search fa-fw"></i>
+                    </button>
+                </div>
+            </div>
+        </div>*@
+
+        <!-- Sidebar Menu -->
+        <nav  class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                     with font-awesome or any other icon font library -->
+                <li class="nav-item">
+                    <a asp-action="Index" asp-controller="Home" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            @_loclizer["Dashboard"]
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    
+                </li>
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-spinner"></i>
+                        <p>
+                            @_loclizer["Status"]
+                            <i class="fas fa-angle-left right"></i>
+                            
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a asp-action="Create" asp-controller="Status" class="nav-link">
+                                <i class="far fas fa-plus"></i>
+                                <p>@_loclizer["AddNewStatus"]</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Status" class="nav-link">
+                                <i class="far fas fa-align-left"></i>
+                                <p>@_loclizer["ListofStatuses"]</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-ruler"></i>
+                        <p>
+                            @_loclizer["Units"]
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a asp-action="Create" asp-controller="Units" class="nav-link">
+                                <i class="far fas fa-plus"></i>
+                                <p>@_loclizer["AddNewUnit"]</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Units" class="nav-link">
+                                <i class="far fas fa-align-left"></i>
+                                <p>@_loclizer["ListofUnits"]</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-clipboard-list"></i>
+                        <p>
+                            @_loclizer["ItemsCategories"]
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a asp-action="Create" asp-controller="ItemsCategories" class="nav-link">
+                                <i class="far fas fa-plus"></i>
+                                <p>@_loclizer["AddNewItemCategory"]</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="ItemsCategories" class="nav-link">
+                                <i class="far fas fa-align-left"></i>
+                                <p>@_loclizer["ListofItemCategories"]</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-paint-roller"></i>
+                        <p>
+                            @_loclizer["Items"]
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a asp-action="Create" asp-controller="ItemsDetails" class="nav-link">
+                                <i class="far fas fa-plus"></i>
+                                <p>@_loclizer["AddNewItem"]</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="ItemsDetails" class="nav-link">
+                                <i class="far fas fa-align-left"></i>
+                                <p>@_loclizer["ListofItems"]</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+
+
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chair"></i>
+                        <p>
+                            @_loclizer["ProductDetails"]
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a asp-action="Create" asp-controller="ProductDetail" class="nav-link">
+                                <i class="far fas fa-plus"></i>
+                                <p>@_loclizer["AddNewProductDetail"]</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="ProductDetail" class="nav-link">
+                                <i class="far fas fa-align-left"></i>
+                                <p>@_loclizer["ListofProductsDetails"]</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+
+
+
+
+
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon far fa-object-ungroup"></i>
+                        <p>
+                            @_loclizer["Template"]
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a asp-action="Create" asp-controller="Templates" class="nav-link">
+                                <i class="far fas fa-plus"></i>
+                                <p>@_loclizer["AddNewTemplate"]</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Templates" class="nav-link">
+                                <i class="far fas fa-align-left"></i>
+                                <p>@_loclizer["ListofTemplates"]</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+ 
+                   <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon far fa-object-ungroup"></i>
+                        <p>
+                            @_loclizer["SuperTemplate"]
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a asp-action="Create" asp-controller="SuperTemplates" class="nav-link">
+                                <i class="far fas fa-plus"></i>
+                                <p>@_loclizer["AddNewTemplate"]</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="SuperTemplates" class="nav-link">
+                                <i class="far fas fa-align-left"></i>
+                                <p>@_loclizer["ListofTemplates"]</p>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </li>
+ 
+
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

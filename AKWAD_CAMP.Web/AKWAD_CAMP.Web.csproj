@@ -1,0 +1,673 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>6933079c-0a40-49b2-989a-5d60eff6dc1a</UserSecretsId>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\ItemsDetailsController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\Header.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="wwwroot\dist\css\adminlte.css.map" />
+    <None Include="wwwroot\dist\css\adminlte.min.css.map" />
+    <None Include="wwwroot\dist\js\adminlte.js" />
+    <None Include="wwwroot\dist\js\adminlte.min.js" />
+    <None Include="wwwroot\dist\js\demo.js" />
+    <None Include="wwwroot\dist\js\pages\dashboard.js" />
+    <None Include="wwwroot\dist\js\pages\dashboard2.js" />
+    <None Include="wwwroot\js\site.js" />
+    <None Include="wwwroot\lib\amcharts5\CHANGELOG.md" />
+    <None Include="wwwroot\lib\amcharts5\deps\markerjs2.js" />
+    <None Include="wwwroot\lib\amcharts5\deps\markerjs2.js.map" />
+    <None Include="wwwroot\lib\amcharts5\deps\pdfmake.js" />
+    <None Include="wwwroot\lib\amcharts5\deps\pdfmake.js.map" />
+    <None Include="wwwroot\lib\amcharts5\deps\xlsx.js" />
+    <None Include="wwwroot\lib\amcharts5\deps\xlsx.js.map" />
+    <None Include="wwwroot\lib\amcharts5\examples\flow-chord-directed\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\flow-chord-directed\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\flow-chord-non-ribbon\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\flow-chord-non-ribbon\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\flow-chord\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\flow-chord\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\flow-sankey\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\flow-sankey\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\gauge-bands\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\gauge-bands\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\gauge\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\gauge\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\hierarchy-force-directed\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\hierarchy-force-directed\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\hierarchy-pack\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\hierarchy-pack\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\hierarchy-partition\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\hierarchy-partition\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\hierarchy-sunburst\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\hierarchy-sunburst\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\hierarchy-treemap\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\hierarchy-treemap\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\hierarchy-tree\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\hierarchy-tree\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\json\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\json\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\map-animating-along-lines\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\map-animating-along-lines\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\map-day-and-night\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\map-day-and-night\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\map-globe-rotate-to-country\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\map-globe-rotate-to-country\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\map-globe-with-projected-circles\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\map-globe-with-projected-circles\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\map-with-bubbles\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\map-with-bubbles\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\map-zoom-to-country\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\map-zoom-to-country\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\misc-40-charts\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\misc-40-charts\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\misc-microchart-grid\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\misc-microchart-grid\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\pie-chart\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\pie-chart\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\pie-donut-chart\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\pie-donut-chart\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\pie-variable-radius\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\pie-variable-radius\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\radar-column-iwatch-style\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\radar-column-iwatch-style\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\radar-heat-map\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\radar-heat-map\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\radar-line\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\radar-line\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\radar-time-line\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\radar-time-line\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\sliced-funnel\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\sliced-funnel\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\sliced-pictorial-stacked\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\sliced-pictorial-stacked\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\sliced-pyramid\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\sliced-pyramid\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-comparing-stocks\data\AAPL_day.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-comparing-stocks\data\AMD_day.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-comparing-stocks\data\AMZN_day.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-comparing-stocks\data\GOOG_day.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-comparing-stocks\data\MSFT_day.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-comparing-stocks\data\NFLX_day.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-comparing-stocks\data\NVDA_day.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-comparing-stocks\data\TSLA_day.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-comparing-stocks\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-comparing-stocks\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-data-granularity\data\MSFT_day.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-data-granularity\data\MSFT_minute.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-data-granularity\data\MSFT_month.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-data-granularity\data\MSFT_week.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-data-granularity\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-data-granularity\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-data-grouping\data\MSFT_day.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-data-grouping\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-data-grouping\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-intraday\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-intraday\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-live\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-live\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-volume-separate-panel\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart-volume-separate-panel\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\stock-chart\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\venn-diagram\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\venn-diagram\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\wordcloud-with-data\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\wordcloud-with-data\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\wordcloud-with-text\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\wordcloud-with-text\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-100-percent-stacked-column\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-100-percent-stacked-column\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-animated-bullet-at-the-end-of-the-series\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-animated-bullet-at-the-end-of-the-series\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-bubble\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-bubble\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-candlestick\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-candlestick\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-clustered-column\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-clustered-column\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-column\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-column\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-comparing-series-google-analytics-style\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-comparing-series-google-analytics-style\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-data-grouping\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-data-grouping\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-draggable-range\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-draggable-range\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-drawing-series-with-mouse-or-touch\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-drawing-series-with-mouse-or-touch\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-dumbbell plot\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-dumbbell plot\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-evenly-spaced-date-axis\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-evenly-spaced-date-axis\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-line-highlight-on-legend-hover\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-line-highlight-on-legend-hover\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-line\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-line\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-live-data\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-live-data\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-multiple-synced-value-axes\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-multiple-synced-value-axes\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-ohlc\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-ohlc\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-real-time-data-sorting\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-real-time-data-sorting\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-smoothed-line\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-smoothed-line\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-stacked-and-clustered-column\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-stacked-and-clustered-column\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-stacked-column\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-stacked-column\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-stacked-step\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-stacked-step\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-stock-comparing\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-stock-comparing\README.md" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-stock\index.js" />
+    <None Include="wwwroot\lib\amcharts5\examples\xy-stock\README.md" />
+    <None Include="wwwroot\lib\amcharts5\flow.js" />
+    <None Include="wwwroot\lib\amcharts5\flow.js.map" />
+    <None Include="wwwroot\lib\amcharts5\geodata\worldLow.js" />
+    <None Include="wwwroot\lib\amcharts5\hierarchy.js" />
+    <None Include="wwwroot\lib\amcharts5\hierarchy.js.map" />
+    <None Include="wwwroot\lib\amcharts5\index.js" />
+    <None Include="wwwroot\lib\amcharts5\index.js.map" />
+    <None Include="wwwroot\lib\amcharts5\LICENSE" />
+    <None Include="wwwroot\lib\amcharts5\LICENSE-3RD-PARTY.md" />
+    <None Include="wwwroot\lib\amcharts5\locales\ar.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\ar.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\bs_BA.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\bs_BA.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\ca_ES.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\ca_ES.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\cs_CZ.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\cs_CZ.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\da_DK.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\da_DK.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\de_CH.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\de_CH.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\de_DE.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\de_DE.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\el_GR.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\el_GR.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\en.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\en.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\en_CA.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\en_CA.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\en_US.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\en_US.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\es_ES.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\es_ES.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\et_EE.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\et_EE.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\fi_FI.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\fi_FI.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\fr_FR.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\fr_FR.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\he_IL.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\he_IL.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\hi_IN.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\hi_IN.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\hr_HR.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\hr_HR.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\hu_HU.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\hu_HU.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\id_ID.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\id_ID.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\it_IT.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\it_IT.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\ja_JP.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\ja_JP.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\ko_KR.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\ko_KR.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\lt_LT.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\lt_LT.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\lv_LV.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\lv_LV.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\nb_NO.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\nb_NO.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\nl_NL.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\nl_NL.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\pl_PL.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\pl_PL.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\pt_BR.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\pt_BR.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\pt_PT.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\pt_PT.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\ro_RO.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\ro_RO.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\ru_RU.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\ru_RU.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\sl_SL.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\sl_SL.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\sr_RS.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\sr_RS.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\sv_SE.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\sv_SE.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\th_TH.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\th_TH.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\tr_TR.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\tr_TR.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\uk_UA.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\uk_UA.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\vi_VN.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\vi_VN.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\zh_Hans.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\zh_Hans.js.map" />
+    <None Include="wwwroot\lib\amcharts5\locales\zh_Hant.js" />
+    <None Include="wwwroot\lib\amcharts5\locales\zh_Hant.js.map" />
+    <None Include="wwwroot\lib\amcharts5\map.js" />
+    <None Include="wwwroot\lib\amcharts5\map.js.map" />
+    <None Include="wwwroot\lib\amcharts5\percent.js" />
+    <None Include="wwwroot\lib\amcharts5\percent.js.map" />
+    <None Include="wwwroot\lib\amcharts5\plugins\exporting.js" />
+    <None Include="wwwroot\lib\amcharts5\plugins\exporting.js.map" />
+    <None Include="wwwroot\lib\amcharts5\plugins\json.js" />
+    <None Include="wwwroot\lib\amcharts5\plugins\json.js.map" />
+    <None Include="wwwroot\lib\amcharts5\plugins\sliceGrouper.js" />
+    <None Include="wwwroot\lib\amcharts5\plugins\sliceGrouper.js.map" />
+    <None Include="wwwroot\lib\amcharts5\radar.js" />
+    <None Include="wwwroot\lib\amcharts5\radar.js.map" />
+    <None Include="wwwroot\lib\amcharts5\README.md" />
+    <None Include="wwwroot\lib\amcharts5\stock.js" />
+    <None Include="wwwroot\lib\amcharts5\stock.js.map" />
+    <None Include="wwwroot\lib\amcharts5\themes\Animated.js" />
+    <None Include="wwwroot\lib\amcharts5\themes\Animated.js.map" />
+    <None Include="wwwroot\lib\amcharts5\themes\Dark.js" />
+    <None Include="wwwroot\lib\amcharts5\themes\Dark.js.map" />
+    <None Include="wwwroot\lib\amcharts5\themes\Dataviz.js" />
+    <None Include="wwwroot\lib\amcharts5\themes\Dataviz.js.map" />
+    <None Include="wwwroot\lib\amcharts5\themes\Frozen.js" />
+    <None Include="wwwroot\lib\amcharts5\themes\Frozen.js.map" />
+    <None Include="wwwroot\lib\amcharts5\themes\Kelly.js" />
+    <None Include="wwwroot\lib\amcharts5\themes\Kelly.js.map" />
+    <None Include="wwwroot\lib\amcharts5\themes\Material.js" />
+    <None Include="wwwroot\lib\amcharts5\themes\Material.js.map" />
+    <None Include="wwwroot\lib\amcharts5\themes\Micro.js" />
+    <None Include="wwwroot\lib\amcharts5\themes\Micro.js.map" />
+    <None Include="wwwroot\lib\amcharts5\themes\Moonrise.js" />
+    <None Include="wwwroot\lib\amcharts5\themes\Moonrise.js.map" />
+    <None Include="wwwroot\lib\amcharts5\themes\Responsive.js" />
+    <None Include="wwwroot\lib\amcharts5\themes\Responsive.js.map" />
+    <None Include="wwwroot\lib\amcharts5\themes\Spirited.js" />
+    <None Include="wwwroot\lib\amcharts5\themes\Spirited.js.map" />
+    <None Include="wwwroot\lib\amcharts5\venn.js" />
+    <None Include="wwwroot\lib\amcharts5\venn.js.map" />
+    <None Include="wwwroot\lib\amcharts5\wc.js" />
+    <None Include="wwwroot\lib\amcharts5\wc.js.map" />
+    <None Include="wwwroot\lib\amcharts5\xy.js" />
+    <None Include="wwwroot\lib\amcharts5\xy.js.map" />
+    <None Include="wwwroot\lib\bootstrap-component\CHANGELOG.md" />
+    <None Include="wwwroot\lib\bootstrap-component\dist\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\lib\bootstrap-component\dist\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap-component\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap-component\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap-component\dist\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\lib\bootstrap-component\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\lib\bootstrap-component\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap-component\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap-component\dist\js\npm.js" />
+    <None Include="wwwroot\lib\bootstrap-component\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\lib\bootstrap-component\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\lib\bootstrap-component\Gemfile" />
+    <None Include="wwwroot\lib\bootstrap-component\Gemfile.lock" />
+    <None Include="wwwroot\lib\bootstrap-component\Gruntfile.js" />
+    <None Include="wwwroot\lib\bootstrap-component\grunt\.jshintrc" />
+    <None Include="wwwroot\lib\bootstrap-component\grunt\bs-commonjs-generator.js" />
+    <None Include="wwwroot\lib\bootstrap-component\grunt\bs-glyphicons-data-generator.js" />
+    <None Include="wwwroot\lib\bootstrap-component\grunt\bs-lessdoc-parser.js" />
+    <None Include="wwwroot\lib\bootstrap-component\grunt\bs-raw-files-generator.js" />
+    <None Include="wwwroot\lib\bootstrap-component\grunt\change-version.js" />
+    <None Include="wwwroot\lib\bootstrap-component\grunt\sauce_browsers.yml" />
+    <None Include="wwwroot\lib\bootstrap-component\ISSUE_TEMPLATE.md" />
+    <None Include="wwwroot\lib\bootstrap-component\js\.jscsrc" />
+    <None Include="wwwroot\lib\bootstrap-component\js\.jshintrc" />
+    <None Include="wwwroot\lib\bootstrap-component\js\affix.js" />
+    <None Include="wwwroot\lib\bootstrap-component\js\alert.js" />
+    <None Include="wwwroot\lib\bootstrap-component\js\button.js" />
+    <None Include="wwwroot\lib\bootstrap-component\js\carousel.js" />
+    <None Include="wwwroot\lib\bootstrap-component\js\collapse.js" />
+    <None Include="wwwroot\lib\bootstrap-component\js\dropdown.js" />
+    <None Include="wwwroot\lib\bootstrap-component\js\modal.js" />
+    <None Include="wwwroot\lib\bootstrap-component\js\popover.js" />
+    <None Include="wwwroot\lib\bootstrap-component\js\scrollspy.js" />
+    <None Include="wwwroot\lib\bootstrap-component\js\tab.js" />
+    <None Include="wwwroot\lib\bootstrap-component\js\tooltip.js" />
+    <None Include="wwwroot\lib\bootstrap-component\js\transition.js" />
+    <None Include="wwwroot\lib\bootstrap-component\less\.csslintrc" />
+    <None Include="wwwroot\lib\bootstrap-component\less\alerts.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\badges.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\bootstrap.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\breadcrumbs.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\button-groups.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\buttons.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\carousel.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\close.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\code.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\component-animations.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\dropdowns.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\forms.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\glyphicons.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\grid.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\input-groups.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\jumbotron.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\labels.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\list-group.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\media.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\alerts.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\background-variant.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\border-radius.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\buttons.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\center-block.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\clearfix.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\forms.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\gradients.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\grid-framework.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\grid.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\hide-text.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\image.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\labels.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\list-group.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\nav-divider.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\nav-vertical-align.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\opacity.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\pagination.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\panels.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\progress-bar.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\reset-filter.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\reset-text.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\resize.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\responsive-visibility.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\size.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\tab-focus.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\table-row.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\text-emphasis.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\text-overflow.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\mixins\vendor-prefixes.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\modals.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\navbar.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\navs.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\normalize.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\pager.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\pagination.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\panels.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\popovers.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\print.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\progress-bars.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\responsive-embed.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\responsive-utilities.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\scaffolding.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\tables.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\theme.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\thumbnails.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\tooltip.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\type.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\utilities.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\variables.less" />
+    <None Include="wwwroot\lib\bootstrap-component\less\wells.less" />
+    <None Include="wwwroot\lib\bootstrap-component\LICENSE" />
+    <None Include="wwwroot\lib\bootstrap-component\nuget\bootstrap.less.nuspec" />
+    <None Include="wwwroot\lib\bootstrap-component\nuget\bootstrap.nuspec" />
+    <None Include="wwwroot\lib\bootstrap-component\nuget\MyGet.ps1" />
+    <None Include="wwwroot\lib\bootstrap-component\package.js" />
+    <None Include="wwwroot\lib\bootstrap-component\README.md" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap-grid.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap-utilities.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap-utilities.min.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\css\bootstrap.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrapfive\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrapfive\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrapfive\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrapfive\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrapfive\js\bootstrap.esm.js" />
+    <None Include="wwwroot\lib\bootstrapfive\js\bootstrap.esm.js.map" />
+    <None Include="wwwroot\lib\bootstrapfive\js\bootstrap.esm.min.js" />
+    <None Include="wwwroot\lib\bootstrapfive\js\bootstrap.esm.min.js.map" />
+    <None Include="wwwroot\lib\bootstrapfive\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrapfive\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrapfive\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrapfive\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\bootstrap-grid.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\bootstrap-reboot.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\bootstrap-utilities.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\bootstrap.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\forms\_floating-labels.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\forms\_form-check.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\forms\_form-control.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\forms\_form-range.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\forms\_form-select.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\forms\_form-text.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\forms\_input-group.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\forms\_labels.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\forms\_validation.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\helpers\_clearfix.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\helpers\_colored-links.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\helpers\_position.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\helpers\_ratio.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\helpers\_stacks.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\helpers\_stretched-link.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\helpers\_text-truncation.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\helpers\_visually-hidden.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\helpers\_vr.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_alert.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_backdrop.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_border-radius.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_box-shadow.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_breakpoints.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_buttons.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_caret.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_clearfix.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_color-scheme.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_container.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_deprecate.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_forms.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_gradients.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_grid.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_image.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_list-group.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_lists.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_pagination.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_reset-text.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_resize.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_table-variants.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_text-truncate.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_transition.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_utilities.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\mixins\_visually-hidden.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\utilities\_api.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\vendor\_rfs.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_accordion.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_alert.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_badge.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_breadcrumb.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_button-group.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_buttons.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_card.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_carousel.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_close.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_containers.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_dropdown.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_forms.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_functions.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_grid.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_helpers.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_images.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_list-group.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_mixins.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_modal.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_nav.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_navbar.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_offcanvas.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_pagination.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_placeholders.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_popover.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_progress.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_reboot.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_root.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_spinners.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_tables.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_toasts.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_tooltip.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_transitions.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_type.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_utilities.scss" />
+    <None Include="wwwroot\lib\bootstrapfive\scss\_variables.scss" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\font-awesome\js\all.js" />
+    <None Include="wwwroot\lib\font-awesome\js\all.min.js" />
+    <None Include="wwwroot\lib\font-awesome\js\brands.js" />
+    <None Include="wwwroot\lib\font-awesome\js\brands.min.js" />
+    <None Include="wwwroot\lib\font-awesome\js\conflict-detection.js" />
+    <None Include="wwwroot\lib\font-awesome\js\conflict-detection.min.js" />
+    <None Include="wwwroot\lib\font-awesome\js\fontawesome.js" />
+    <None Include="wwwroot\lib\font-awesome\js\fontawesome.min.js" />
+    <None Include="wwwroot\lib\font-awesome\js\regular.js" />
+    <None Include="wwwroot\lib\font-awesome\js\regular.min.js" />
+    <None Include="wwwroot\lib\font-awesome\js\solid.js" />
+    <None Include="wwwroot\lib\font-awesome\js\solid.min.js" />
+    <None Include="wwwroot\lib\font-awesome\js\v4-shims.js" />
+    <None Include="wwwroot\lib\font-awesome\js\v4-shims.min.js" />
+    <None Include="wwwroot\lib\font-awesome\sprites\brands.svg" />
+    <None Include="wwwroot\lib\font-awesome\sprites\regular.svg" />
+    <None Include="wwwroot\lib\font-awesome\sprites\solid.svg" />
+    <None Include="wwwroot\lib\font-awesome\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\lib\font-awesome\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\lib\font-awesome\webfonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\lib\font-awesome\webfonts\fa-v4compatibility.woff2" />
+    <None Include="wwwroot\lib\gentelella\js\custom.js" />
+    <None Include="wwwroot\lib\gentelella\js\custom.min.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="6.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Spire.XLS" Version="12.4.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="Telerik.UI.for.AspNet.Core.Trial" Version="2022.1.412" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AKWAD_CAMP.Core\AKWAD_CAMP.Core.csproj" />
+    <ProjectReference Include="..\AKWAD_CAMP.EF\AKWAD_CAMP.EF.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Shared\Error.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\_Layout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\_LoginPartial.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\_ValidationScriptsPartial.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\SuperTemplates\Create.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Shared\AdminLTE\NavBar.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Shared\AdminLTE\NavBar.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\AdminLTE\SideBar.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_LayoutLogged.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Shared\AdminLTE\SideBar.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Shared\_LayoutLogged.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,74 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+
+<header id="headingArea" class="main-header d-flex justify-content-start first" style="position: fixed;width:100%; height:50px">
+    @* BEGIN Logo *@
+    <a class="logo"
+       @*style="background: linear-gradient(#cccccc,#013459),#000000; box-shadow:5px 5px 5px #ffffff;transition:all 0.8s ease;"*@>
+        @* Mini logo for sidebar 50x50 pixels *@
+        <span class="logo-mini" @*style="color:#000000"*@><b>S</b>IS</span>
+        @* Logo for regular state and mobile devices *@
+        <span class="logo-lg">
+            <small style="color:#000000">Shop.Manager.System</small>
+        </span>
+    </a>
+    @* END Logo *@
+    @* BEGIN Header *@
+
+    <nav class="navbar navbar-static-top" role="navigation" @*style="background: linear-gradient(#cccccc,#fffff),#000000; box-shadow: 5px 5px 5px #ffffff; transition: all 0.8s ease;"*@>
+
+        <a href="#" class="" style="color:black;" data-toggle="push-menu" role="button">
+            <span class="glyphicon glyphicon-align-justify togela "></span>
+        </a>
+
+        <partial name="_LoginPartial" />
+
+
+    </nav>
+</header>
+
+
+
+<style>
+
+    .main-header .togela {
+        float: left;
+        background-color: transparent;
+        background-image: none;
+        padding: 0px 0px;
+        font-family: fontAwesome;
+    }
+
+
+
+        .main-header .togela:before {
+            content: "\f0c9";
+        }
+
+        .main-header .togela:hover {
+            color: #fff;
+        }
+
+        .main-header .togela:focus,
+        .main-header .togela:active {
+            background: transparent;
+        }
+
+        .main-header .togela .icon-bar {
+            display: none;
+        }
+</style>
+<style>
+    .first {
+        
+        
+        position: absolute;
+        
+    }
+
+    .second {
+        position: relative;
+        
+    }
+</style>
+

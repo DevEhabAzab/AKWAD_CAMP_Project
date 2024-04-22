@@ -1,0 +1,107 @@
+﻿@model IEnumerable<ListItemViewModel>
+@using AKWAD_CAMP.Web.ViewModels
+@using Microsoft.AspNetCore.Mvc.Localization;
+@using System.Globalization;
+@inject IViewLocalizer _loclizer;
+@{
+    ViewData["Title"] = @_loclizer["Items"];
+}
+@{
+    var current_cult = Thread.CurrentThread.CurrentUICulture.Name;
+    var path = $"/lib/Kendo/js/cultures/kendo.culture.{current_cult}.min.js";
+}
+@section KendoGridJqueryScripts {
+    
+@*<script src="https://kendo.cdn.telerik.com/2022.1.412/js/jquery.min.js"></script>*@
+<script src="~/lib/Kendo/js/jquery.min.js"></script>
+
+}
+@section KendoGridScripts{
+   @* <link href="https://kendo.cdn.telerik.com/2022.1.412/styles/kendo.bootstrap-v4.min.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/lib/Kendo/css/kendo.bootstrap-v4.min.css" rel="stylesheet" type="text/css" />
+@* Add the Kendo UI scripts: *@
+@*<script src="https://kendo.cdn.telerik.com/2022.1.412/js/kendo.all.min.js"></script>*@
+<script src="~/lib/Kendo/js/kendo.all.min.js"></script>
+@*<script src="https://kendo.cdn.telerik.com/2022.1.412/js/kendo.aspnetmvc.min.js"></script>*@
+<script src="~/lib/Kendo/js/kendo.aspnetmvc.min.js"></script>
+<script src="@path"></script>
+ <script>kendo.culture('@current_cult');</script>
+}
+<div class="text-center">
+    <h1>@_loclizer["Items"]</h1>
+    </div>
+ @(Html.Kendo().Grid<ListItemViewModel>(Model)
+        .Name("grid")
+        .ToolBar(tools =>
+        {
+            tools.Custom().Text(_loclizer["Create"].Value).HtmlAttributes(new {id="CreateBtn" , onclick = "Create(\"/ItemsDetails/Create\")" });
+        })
+        .Editable(editable => editable.Mode(GridEditMode.PopUp))
+        .Pageable()
+        .Sortable()
+        .Height(660)
+         .Resizable(resize => resize.Columns(true)) 
+        .Scrollable()
+        .Filterable(filterable => {
+        filterable.Messages(messages =>
+        {
+            messages.Info(_loclizer["filterheader"].Value);
+            messages.Clear(_loclizer["clerafilter"].Value);
+            messages.Or(_loclizer["or"].Value);
+            messages.And(_loclizer["and"].Value);
+            messages.IsTrue(_loclizer["isTrue"].Value);
+            /* and others */
+        });
+        filterable.Operators(op => {
+            op.ForString(strop=> {
+                strop.Clear(); // default filter operator
+                strop.Contains(_loclizer["contains"].Value);
+                strop.DoesNotContain(_loclizer["notcontains"].Value);
+                strop.EndsWith(_loclizer["endsWith"].Value);
+                strop.IsNotEmpty(_loclizer["isNotempty"].Value);
+                strop.IsEqualTo(_loclizer["isEqual"].Value);
+                strop.IsNotEqualTo(_loclizer["isNotEqualTo"].Value);
+                strop.StartsWith(_loclizer["startsWith"].Value);
+
+
+            });
+            op.ForNumber(strop=> {
+                strop.Clear();
+                strop.IsGreaterThan(_loclizer["IsGreaterThan"].Value);
+                strop.IsGreaterThanOrEqualTo(_loclizer["IsGreaterThanOrEqualTo"].Value);
+                strop.IsEqualTo(_loclizer["isEqual"].Value);
+                strop.IsLessThan(_loclizer["IsLessThan"].Value);
+                strop.IsLessThanOrEqualTo(_loclizer["IsLessThanOrEqualTo"].Value);
+                strop.IsNotEqualTo(_loclizer["isNotEqualTo"].Value);
+            });
+
+           
+        });
+    })
+        .Columns(columns =>
+        {
+            columns.Bound(f => f.ItemNumber);
+            columns.Bound(f => f.ItemName);
+       
+            columns.Bound(f => f.ItemDesc);
+            columns.Bound(f => f.Category);
+            columns.Bound(f => f.Status);
+            columns.Bound(f => f.Unit);
+            columns.Bound(f => f.ItemPrice).ClientTemplate($"#=curruncylan(data.ItemPrice,\"{current_cult}\")#");
+            //columns.Bound(f => f.BeginDate);
+            //columns.Bound(f => f.EndDate);
+            //columns.Bound(f=>f.LastUpdateDate);
+            //columns.Bound(f=>f.LastUpdateUser);
+            
+            
+            //columns.Bound(f => f.Parent.CategoryName);
+            //columns.ForeignKey(p => p.ParentId, (System.Collections.IEnumerable)ViewData["Parents"], "ParentId", "ParentName").Title("Category").Width(150);
+            //columns.Bound(f => f.EndDate);
+            columns.Bound(f => f.Active).ClientTemplate("#=checkBoxTemplate(data,\"Active\")#");
+            //columns.Bound(f => f.Deleted).ClientTemplate("#=checkBoxTemplate(data,\"Deleted\")#");
+            columns.Bound(f => f.ItemId).ClientTemplate("#=Template(data,\"ItemId\",\"ItemsDetails\")#").Width(200).Title(@_loclizer["Action"].Value);
+            
+       
+        })
+        )
+

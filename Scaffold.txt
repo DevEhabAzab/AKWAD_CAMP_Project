@@ -1,0 +1,1 @@
+"Server=.;Database=Sales;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Project AKWAD_CAMP.Core -ContextDir C:\Users\eslam\source\repos\AKWAD_CAMP\AKWAD_CAMP.EF

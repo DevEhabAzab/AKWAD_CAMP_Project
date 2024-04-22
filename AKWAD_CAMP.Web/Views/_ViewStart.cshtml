@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+@using System.Globalization;
+@inject IViewLocalizer _loclizer;
+@{
+    Layout = "_LayoutLogged";
+    ViewData["CreateVD"] = @_loclizer["Create"].Value;
+    ViewData["AddSelectedItems"] = @_loclizer["AddSelectedItems"];
+    ViewData["ClearAddedItemsandAddSelected"] = @_loclizer["AddSelectedItems"];
+}
+
+
+

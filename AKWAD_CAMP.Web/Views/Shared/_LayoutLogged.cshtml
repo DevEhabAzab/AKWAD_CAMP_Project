@@ -1,0 +1,109 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+@using System.Globalization;
+@inject IViewLocalizer _loclizer;
+<!DOCTYPE html>
+@{
+    var isRTL = CultureInfo.CurrentCulture.Name.StartsWith("ar");
+}
+<html lang="en" dir="@(isRTL?"RTL":"LRT")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AKWAD</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    
+    <link rel="stylesheet" href="~/css/site.css" />
+    @*<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">*@
+    <link rel="stylesheet" href="~/lib/googlefonts/css/fonts.css">
+    <link rel="stylesheet" href="~/AdminLTE-3.1.0/plugins/fontawesome-free/css/all.min.css">
+    @*<link rel="stylesheet" href="~/AdminLTE-3.1.0/dist/css/adminlte.min.css">*@
+        <link rel="stylesheet" href="~/AdminLTE-3-RTL-master/dist/css/adminlte.min.css" />
+
+    <link rel="stylesheet" href="~/fontawesome-free-5.15.4-web/css/all.css">
+    @if (isRTL)
+    {
+        @*<link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">*@
+        <link rel="stylesheet" href="~/lib/BootstrapRTL/css/bootstrap.min.css">
+        @*<link rel="stylesheet" href="~/lib/BootstrapRTL/css/bootstrap-rtl.min.css" />*@
+        <link rel="stylesheet" href="~/AdminLTE-3-RTL-master/dist/css/custom.css" />
+        <style>
+            .offset-2 {
+                margin-right: 16.66666667% !important;
+                margin-left: 0;
+            }
+        </style>
+    }
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @RenderSection("KendoGridJqueryScripts",false)
+    @RenderSection("KendoGridScripts",false)
+    <style>
+        svg#Layer_1:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini layout-navbar-fixed">
+    <partial name="AdminLTE/NavBar" />
+    <partial name="AdminLTE/SideBar" />
+    <div class="wrapper">
+
+
+        <div class="content-wrapper">
+            <div style="margin-top:-4%" class="container-fluid">
+
+                @RenderBody()
+
+            </div>
+        </div>
+        <footer class="main-footer">
+            <div class="float-right d-none d-sm-block">
+                <b>Version</b> 1.0
+            </div>
+            <strong>&copy; @_loclizer["CopyRights",DateTime.Now.Year] - <a asp-area="" asp-controller="Home" asp-action="Privacy">@_loclizer["Privacy"]</a></strong>
+        </footer>
+        @*<footer class="main-footer">
+                <div class="container">
+                    &copy; 2021 - Cocinera - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </footer>*@
+        <aside class="control-sidebar control-sidebar-dark">
+            @*Control sidebar content goes here*@
+        </aside>
+        <script>
+            function home() {
+
+                window.location.href = "/Home/Index"
+            }
+        </script>
+
+        
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+          var cultureInfo = '@System.Globalization.CultureInfo.CurrentCulture.Name';
+          var wordName = '@_loclizer["Name"]';
+          var wordNumber = '@_loclizer["Number"]';
+          var wordQuantity = '@_loclizer["Quantity"]';
+          var wordPrice = '@_loclizer["Price"]';
+          var wordTotal = '@_loclizer["Total"]';
+          var wordItemName = '@_loclizer["ItemName"]';
+          var wordItemNumber = '@_loclizer["ItemNumber"]';
+          var wordUnitPrice = '@_loclizer["UnitPrice"]';
+          var wordTemplateItemName = '@_loclizer["TemplateName"]';
+          var wordTemplateItemId = '@_loclizer["TemplateId"]';
+
+          
+          console.log("calt",cultureInfo);
+          
+   
+  
+        </script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <!-- AdminLTE App -->
+        <script src="~/AdminLTE-3.1.0/dist/js/adminlte.min.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="~/AdminLTE-3.1.0//dist/js/demo.js"></script>
+        @*<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>*@
+        @await RenderSectionAsync("Scripts", required: false)
+    </div>
+</body>
+</html>

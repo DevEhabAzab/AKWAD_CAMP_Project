@@ -1,0 +1,129 @@
+﻿@model AKWAD_CAMP.Core.Models.ItemsDetail
+@using Microsoft.AspNetCore.Mvc.Localization;
+@using System.Globalization;
+@inject IViewLocalizer _loclizer;
+@{
+    ViewData["Title"] = @_loclizer["Edit"];
+}
+
+<div class="text-center">
+@*<h1>Create New Unit</h1>*@
+<hr />
+<form asp-action="Edit">
+     <input type="hidden" asp-for="ItemId" />
+<div class="card offset-2 col-8 pb-3 mt-4" >
+    <div class="card-header text-bold text-center">
+     @_loclizer["Edit"] @Html.DisplayFor(m => m.ItemName)
+  </div>
+ <ul class="list-group list-group-flush">
+    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="ItemNumber" class="control-label"></label></div><div class="col-6"><input asp-for="ItemNumber" readonly class="form-control" style="text-align:center;"  /><span asp-validation-for="ItemNumber"  class="text-danger"></span></div><div class="col-2"></div> </div></li>
+   <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="ItemName" class="control-label"></label></div><div class="col-6"><input asp-for="ItemName" class="form-control" /><span asp-validation-for="ItemName" class="text-danger"></span></div><div class="col-2"></div> </div></li>
+    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="ItemDesc" class="control-label"></label></div><div class="col-6"><textarea asp-for="ItemDesc" class="form-control" rows="2"></textarea><span asp-validation-for="ItemDesc" class="text-danger"></span></div> <div class="col-2"></div></div></li>
+    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="CategoryId" class="control-label"></label></div><div class="col-6"><select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"><option value="">@_loclizer["SelectCategory"]</option></select><span asp-validation-for="CategoryId" class="text-danger"></span></div> <div class="col-2"></div></div></li>
+    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="UnitId" class="control-label"></label></div><div class="col-6"><select asp-for="UnitId" class ="form-control" asp-items="ViewBag.UnitId"><option>@_loclizer["SelectUnit"]</option></select><span asp-validation-for="UnitId" class="text-danger"></span></div> <div class="col-2"></div></div></li>
+    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="ItemPrice" class="control-label"></label></div><div class="col-6"><input asp-for="ItemPrice" class="form-control" /><span asp-validation-for="ItemPrice" class="text-danger"></span></div> <div class="col-2"></div></div></li>
+    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="StatusId" class="control-label"></label></div><div class="col-6"><select asp-for="StatusId" class ="form-control" asp-items="ViewBag.StatusId"><option value="">@_loclizer["SelectStatus"]</option></select><span asp-validation-for="StatusId" class="text-danger"></span></div> <div class="col-2"></div></div></li>
+    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="Active" class="control-label"></label></div><div class="col-6 form-check form-switch"><input asp-for="Active" class="form-check-input"role="switch" id="flexSwitchCheckChecked"  /><span asp-validation-for="Active" class="text-danger"></span></div> <div class="col-2"></div></div></li>
+
+  </ul>
+  <div class="text-center">
+    <input type="submit" value="@_loclizer["Save"]" class="btn btn-primary" /> 
+    <a  class="btn btn-default" asp-action="Index">@_loclizer["BacktoList"]</a>
+</div>
+</div>
+</form>
+</div>
+@*<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+            <div class="form-group">
+                <label asp-for="ItemNumber" class="control-label"></label>
+                <input asp-for="ItemNumber" class="form-control" />
+                <span asp-validation-for="ItemNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemName" class="control-label"></label>
+                <input asp-for="ItemName" class="form-control" />
+                <span asp-validation-for="ItemName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemDesc" class="control-label"></label>
+                <input asp-for="ItemDesc" class="form-control" />
+                <span asp-validation-for="ItemDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UnitId" class="control-label"></label>
+                <select asp-for="UnitId" class="form-control" asp-items="ViewBag.UnitId"></select>
+                <span asp-validation-for="UnitId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubCategoryId" class="control-label"></label>
+                <select asp-for="SubCategoryId" class="form-control" asp-items="ViewBag.SubCategoryId"></select>
+                <span asp-validation-for="SubCategoryId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemPrice" class="control-label"></label>
+                <input asp-for="ItemPrice" class="form-control" />
+                <span asp-validation-for="ItemPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemExpDate" class="control-label"></label>
+                <input asp-for="ItemExpDate" class="form-control" />
+                <span asp-validation-for="ItemExpDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastUpdateUser" class="control-label"></label>
+                <input asp-for="LastUpdateUser" class="form-control" />
+                <span asp-validation-for="LastUpdateUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastUpdateDate" class="control-label"></label>
+                <input asp-for="LastUpdateDate" class="form-control" />
+                <span asp-validation-for="LastUpdateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatusId" class="control-label"></label>
+                <select asp-for="StatusId" class="form-control" asp-items="ViewBag.StatusId"></select>
+                <span asp-validation-for="StatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BeginDate" class="control-label"></label>
+                <input asp-for="BeginDate" class="form-control" />
+                <span asp-validation-for="BeginDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Active" /> @Html.DisplayNameFor(model => model.Active)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Deleted" /> @Html.DisplayNameFor(model => model.Deleted)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

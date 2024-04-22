@@ -1,0 +1,103 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+@using System.Globalization;
+@inject IViewLocalizer _loclizer;
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+
+    <br />
+    <br />
+    <br />
+ <div class="row">
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3 id="Templates">Loading...</h3>
+
+                <p> @ViewBag.NewTemplate</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-american-sign-language-interpreting" aria-hidden="true"></i>
+              </div>
+              <a asp-action="index"asp-controller="Templates" class="small-box-footer">
+             @ViewBag.More <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3 id="Items">Loading...<sup style="font-size: 20px"></sup></h3>
+
+                <p>@ViewBag.Items</p>
+              </div>
+              <div class="icon">
+                <i class=" fas fa-boxes" aria-hidden="true"></i>
+              </div>
+              <a asp-action="index" asp-controller="ItemsDetails" class="small-box-footer">
+                @ViewBag.More <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3 id="Products">Loading...</h3>
+
+                <p>@_loclizer["Products"]</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-braille"aria-hidden="true"></i>
+              </div>
+              <a asp-action="index" asp-controller="ProductDetail" class="small-box-footer">
+                @ViewBag.More <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3 id="Units">Loading...</h3>
+
+                <p>@_loclizer["Units"]</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-chart-pie"></i>
+              </div>
+              <a asp-action="index"asp-controller"Units" class="small-box-footer">
+                @ViewBag.More <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <!-- ./col -->
+        </div>
+        <!-- /.row -->
+        <div style="width:100%;" class="row">
+            <div class="col-md-6 col-sm-12" style="height:500px;" id="topInTemp"></div>
+            <div class="col-md-6 col-sm-12" style="height:500px;" id="topExpensive"></div>
+        </div>
+
+
+@section Scripts {
+
+    <script src="~/lib/amcharts4/core.js"></script>
+    <script src="~/lib/amcharts4/charts.js"></script>
+    <script src="~/lib/amcharts4/themes/animated.js"></script>
+    @*<script src="~/lib/amcharts4/themes/kelly.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>*@
+<script src="~/js/dashBoard.js"></script>
+
+}
+
+

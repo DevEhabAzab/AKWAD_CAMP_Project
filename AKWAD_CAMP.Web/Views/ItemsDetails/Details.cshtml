@@ -1,0 +1,35 @@
+﻿@model AKWAD_CAMP.Core.Models.ItemsDetail
+@using Microsoft.AspNetCore.Mvc.Localization;
+@using System.Globalization;
+@inject IViewLocalizer _loclizer;
+@{
+    ViewData["Title"] = @_loclizer["Details"];
+}
+
+<div class="text-center">
+    <hr />
+    
+        <div class="card offset-2 col-8 pb-3" >
+              <div class="card-header text-bold text-center">
+                 @_loclizer["ItemDetails"]
+              </div>
+               <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="ItemNumber" class="control-label"></label></div><div class="col-6"><input asp-for="ItemNumber" class="form-control" readonly /><span asp-validation-for="ItemNumber" class="text-danger"></span></div><div class="col-2"></div> </div></li>
+                    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="ItemName" class="control-label"></label></div><div class="col-6"><input asp-for="ItemName" class="form-control"readonly /><span asp-validation-for="ItemName" class="text-danger"></span></div><div class="col-2"></div> </div></li>
+                    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="ItemDesc" class="control-label"></label></div><div class="col-6"><textarea asp-for="ItemDesc" class="form-control" rows="2" readonly></textarea><span asp-validation-for="ItemDesc" class="text-danger"></span></div> <div class="col-2"></div></div></li>
+                    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="CategoryId" class="control-label"></label></div><div class="col-6"><select asp-for="CategoryId" class ="form-control" disabled asp-items="ViewBag.CategoryId"><option>@_loclizer["SelectCategory"]</option></select><span asp-validation-for="CategoryId" class="text-danger"></span></div> <div class="col-2"></div></div></li>
+                    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="UnitId" class="control-label"></label></div><div class="col-6"><select asp-for="UnitId" class ="form-control" asp-items="ViewBag.UnitId" disabled><option>@_loclizer["SelectUnit"]</option></select><span asp-validation-for="UnitId" class="text-danger"></span></div> <div class="col-2"></div></div></li>
+                    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="ItemPrice" class="control-label"></label></div><div class="col-6"><input asp-for="ItemPrice" class="form-control" readonly /><span asp-validation-for="ItemPrice" class="text-danger"></span></div> <div class="col-2"></div></div></li>
+                    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="StatusId" class="control-label"></label></div><div class="col-6"><select asp-for="StatusId" class ="form-control" asp-items="ViewBag.StatusId" disabled><option>@_loclizer["SelectStatus"]</option></select><span asp-validation-for="StatusId" class="text-danger"></span></div> <div class="col-2"></div></div></li>
+                    <li class="list-group-item"><div class="row"><div class="offset-2 col-2"><label asp-for="Active" class="control-label"></label></div><div class="col-6 form-check form-switch"><input asp-for="Active" class="form-check-input"role="switch" id="flexSwitchCheckChecked" disabled  /><span asp-validation-for="Active" class="text-danger"></span></div> <div class="col-2"></div></div></li>
+
+                  </ul>
+
+              <div class="text-center">
+                <a asp-action="Edit" class=" btn btn-primary" asp-route-id="@Model.ItemId">@_loclizer["Edit"]</a> |
+                <a asp-action="Index" class="btn btn-default">@_loclizer["BacktoList"]</a>
+              </div>
+        </div>
+
+</div>
+
